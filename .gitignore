@@ -1,3 +1,6 @@
+# if you are reading this you have an excessive, immoderate, inordinate, extravagant, exorbitant amount of free time
+# I copied this from the first google result on 'eclipse .gitignore' after being forced to share my code, and installing an IDE to have it somewhat formatted
+
 .metadata
 bin/
 tmp/
