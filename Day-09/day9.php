@@ -27,20 +27,25 @@ var_dump($part2);
 
 function runshit($lines, $preamble, $target_num = false)
 {
+    // this fills the preamble 'buffer' .. fixed for part1, variable for part 2
     for ($i = 0; $i < count($lines); $i ++) {
         if ($i < $preamble) {
             $pre_array[] = $lines[$i];
             continue;
         }
-        $currentnum = $lines[$i];
+        
         
         // part 1, we need to find combos
         if (! $target_num) {
+            // My current num ..
+            $currentnum = $lines[$i];
+            
             // foreach the shit out of it
             if (findCombos($pre_array, $currentnum)) {} else {
                 return $currentnum;
             }
         }
+        
         // part 2, we need to know the sum of all de keys in preamble
         if ($target_num && array_sum($pre_array) == $target_num) {
             // stupid sort because we need the first and the last key
@@ -48,7 +53,8 @@ function runshit($lines, $preamble, $target_num = false)
             return ($pre_array[0] + end($pre_array));
         }
         
-        // both
+        // both .. go to the next step by removing the first item 
+        // and adding the last 
         $pre_array[] = $lines[$i];
         array_shift($pre_array);
     }
