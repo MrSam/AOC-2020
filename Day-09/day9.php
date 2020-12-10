@@ -40,8 +40,8 @@ function runshit($lines, $preamble, $target_num = false)
             // My current num ..
             $currentnum = $lines[$i];
             
-            // foreach the shit out of it
-            if (findCombos($pre_array, $currentnum)) {} else {
+            // foreach the shit out of it untill you cannot find a valid combo
+            if (!findCombos($pre_array, $currentnum)) {
                 return $currentnum;
             }
         }
